@@ -17,7 +17,7 @@ class KMean(object):
         D, N = points.shape
 
         # DxK array initialiezd with random points
-        centroids = points[, np.random.permutation(N)[:K]]
+        centroids = points[:, np.random.permutation(N)[:K]]
 
         # Assigments 1xN array
         labels = np.zeros([1, N])
@@ -28,7 +28,7 @@ class KMean(object):
             distances = np.zeros([K, N])
             for n in np.arange(N):
                 for k in np.arange(K):
-                    distances[k, n] = np.sqrt( (points[:, n] - centroids(:, k))**2 ).sum()
+                    distances[k, n] = np.sqrt( (points[:, n] - centroids[:, k])**2 ).sum()
             #distances = np.sqrt(((points - centroids[:, np.newaxis, 0])**2)).sum(axis=0)         
 
             # 2. Update assigments
@@ -44,7 +44,7 @@ class KMean(object):
 
             # 3. Update mean
             for k in np.arange(K):
-                centroids[:, k] : np.mean(points[:, labels == k], axis=1)
+                centroids[:, k] = np.mean(points[:, labels == k], axis=1)
             #np.array([points[closest==k].mean(axis=0) for k in range(centroids.shape[0])])
 
         return centroids, label
