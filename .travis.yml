@@ -18,5 +18,5 @@ script:
 
 notifications:
   slack: 'sigma-tous:9DUtOEjtdvU1mnoUsEf61YhN#steniq'
-    on_success: always
-    on_failure: always
+  on_success: always
+  on_failure: always
