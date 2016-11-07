@@ -14,7 +14,7 @@ install:
 
 script: 
     - "python tests.py"
-    - py.test
+    - "py.test tests/*"
 
 notifications:
   slack:
