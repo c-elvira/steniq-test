@@ -2,9 +2,8 @@ import numpy as np
 
 class KMean(object):
     """my k-mean algorithm"""
-    def __init__(self, arg):
+    def __init__(self):
         super(KMean, self).__init__()
-        self.arg = arg
         
     niter = 100;
 
@@ -20,7 +19,7 @@ class KMean(object):
         centroids = points[:, np.random.permutation(N)[:K]]
 
         # Assigments 1xN array
-        labels = np.zeros([1, N])
+        labels = np.zeros(N)
 
         for it in np.arange(self.niter):
             # 1. Compute distance to all cluster
@@ -38,7 +37,7 @@ class KMean(object):
                 for k in np.arange(1, K):
                     if distances[k, n] <= distances[kmin, n]:
                         kmin = k
-                labels[0, n] = kmin
+                labels[n] = kmin
                 # v2 quicker
             #labels = np.argmin(distances, axis=1)
 
