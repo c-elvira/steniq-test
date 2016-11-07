@@ -22,7 +22,7 @@ after_success:
 
 notifications:
   slack:
-      rooms:
-        - ':<token>#steniq'
+    #  rooms:
+    #    - ':<token>#steniq'
     on_success: always
     on_failure: always
