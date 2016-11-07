@@ -16,6 +16,7 @@ install:
 
 script: 
     - "python tests.py"
+    - "pytest"
 
 notifications:
   slack:
